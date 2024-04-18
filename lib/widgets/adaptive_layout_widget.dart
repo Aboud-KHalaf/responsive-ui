@@ -1,10 +1,8 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class AdaptiveLayout extends StatelessWidget {
-  const AdaptiveLayout(
+class AdaptiveLayoutWidget extends StatelessWidget {
+  const AdaptiveLayoutWidget(
       {super.key,
       required this.moblieLayout,
       required this.tabletLayout,
