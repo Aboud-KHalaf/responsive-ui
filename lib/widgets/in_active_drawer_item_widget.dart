@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:ui/models/drawer_item_model.dart';
 import 'package:ui/utils/app_styles.dart';
 
-class DrawerItemWidget extends StatelessWidget {
-  const DrawerItemWidget({
+class InActiveDrawerItemWidget extends StatelessWidget {
+  const InActiveDrawerItemWidget({
     super.key,
     required this.drawerItemModel,
-    required this.isSelected,
   });
 
   final DrawerItemModel drawerItemModel;
-  final bool isSelected;
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +19,7 @@ class DrawerItemWidget extends StatelessWidget {
       ),
       title: Text(
         drawerItemModel.text,
-        style: isSelected
-            ? AppStyles.styleBold16(context).copyWith(color: Colors.cyan)
-            : AppStyles.styleMedium16(context),
+        style: AppStyles.styleMedium16(context),
       ),
     );
   }

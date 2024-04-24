@@ -3,24 +3,12 @@ import 'package:ui/models/drawer_item_model.dart';
 import 'package:ui/models/user_info_model.dart';
 import 'package:ui/utils/app_images.dart';
 import 'package:ui/widgets/custom_user_info_widget.dart';
-import 'package:ui/widgets/drawer_item_widget.dart';
+import 'package:ui/widgets/drawer_items_list_view_widget.dart';
+import 'package:ui/widgets/in_active_drawer_item_widget.dart';
 
-class CustomDrawerWidget extends StatefulWidget {
+class CustomDrawerWidget extends StatelessWidget {
   const CustomDrawerWidget({super.key});
 
-  @override
-  State<CustomDrawerWidget> createState() => _CustomDrawerWidgetState();
-}
-
-class _CustomDrawerWidgetState extends State<CustomDrawerWidget> {
-  List<DrawerItemModel> items = [
-    const DrawerItemModel(image: Assets.imagesDashboard, text: 'My Dashbord'),
-    const DrawerItemModel(image: Assets.imagesGallery, text: 'My Dashbord'),
-    const DrawerItemModel(
-        image: Assets.imagesMyTransctions, text: 'My Dashbord'),
-    const DrawerItemModel(image: Assets.imagesLogout, text: 'My Dashbord'),
-  ];
-  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -34,24 +22,21 @@ class _CustomDrawerWidgetState extends State<CustomDrawerWidget> {
           ),
         ),
         const SizedBox(height: 8),
-        ListView.builder(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          itemCount: items.length,
-          itemBuilder: (context, index) {
-            return GestureDetector(
-              onTap: () {
-                setState(() {
-                  selectedIndex = index;
-                });
-              },
-              child: DrawerItemWidget(
-                isSelected: (index == selectedIndex),
-                drawerItemModel: items[index],
-              ),
-            );
-          },
-        )
+        const DrawerItemListViewWidget(),
+        const Expanded(child: SizedBox()),
+        const InActiveDrawerItemWidget(
+          drawerItemModel: DrawerItemModel(
+            image: Assets.imagesSettings,
+            text: 'System Settings',
+          ),
+        ),
+        const InActiveDrawerItemWidget(
+          drawerItemModel: DrawerItemModel(
+            image: Assets.imagesLogout,
+            text: 'Log Out',
+          ),
+        ),
+        const SizedBox(height: 30),
       ],
     );
   }
