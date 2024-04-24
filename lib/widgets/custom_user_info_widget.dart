@@ -10,15 +10,19 @@ class CustomUserInfoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: SvgPicture.asset(userInfo.image),
-      title: Text(
-        userInfo.titel,
-        style: AppStyles.styleSemiBold16(context),
-      ),
-      subtitle: Text(
-        userInfo.email,
-        style: AppStyles.styleRegular12(context),
+    return Card(
+      color: Colors.white10,
+      elevation: 0,
+      child: ListTile(
+        leading: SvgPicture.asset(userInfo.image),
+        title: Text(
+          userInfo.name,
+          style: AppStyles.styleSemiBold16(context),
+        ),
+        subtitle: Text(
+          userInfo.email,
+          style: AppStyles.styleRegular12(context),
+        ),
       ),
     );
   }

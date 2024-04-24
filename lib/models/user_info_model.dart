@@ -1,5 +1,9 @@
 class UserInfo {
-  final String image, titel, email;
+  final String image, name, email;
 
-  UserInfo({required this.image, required this.titel, required this.email});
+  UserInfo({
+    required this.image,
+    required this.name,
+    required this.email,
+  });
 }

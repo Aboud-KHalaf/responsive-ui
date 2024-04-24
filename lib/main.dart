@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ui/helpers/theme/dark_theme.dart';
+import 'package:ui/helpers/theme/light_theme.dart';
 import 'package:ui/views/dashboard_view.dart';
 
 void main() {
@@ -13,9 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: true,
-      ),
+      theme: lightTheme,
       home: const DashboardView(),
     );
   }
