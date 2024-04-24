@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:ui/models/drawer_item_model.dart';
 import 'package:ui/models/user_info_model.dart';
 import 'package:ui/utils/app_images.dart';
@@ -11,32 +13,41 @@ class CustomDrawerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        CustomUserInfoWidget(
-          userInfo: UserInfo(
-            image: Assets.imagesAvatar3,
-            name: 'Aboud Khalaf',
-            email: 'aboud.khalaf.10@gmail.com',
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: CustomUserInfoWidget(
+            userInfo: UserInfo(
+              image: Assets.imagesAvatar3,
+              name: 'Aboud Khalaf',
+              email: 'aboud.khalaf.10@gmail.com',
+            ),
           ),
         ),
-        const SizedBox(height: 8),
+        const SliverToBoxAdapter(child: SizedBox(height: 8)),
         const DrawerItemListViewWidget(),
-        const Expanded(child: SizedBox()),
-        const InActiveDrawerItemWidget(
-          drawerItemModel: DrawerItemModel(
-            image: Assets.imagesSettings,
-            text: 'System Settings',
+        const SliverFillRemaining(
+          hasScrollBody: false,
+          child: Column(
+            children: [
+              Expanded(child: SizedBox()),
+              SizedBox(height: 16),
+              InActiveDrawerItemWidget(
+                drawerItemModel: DrawerItemModel(
+                  image: Assets.imagesSettings,
+                  text: 'System Settings',
+                ),
+              ),
+              InActiveDrawerItemWidget(
+                drawerItemModel: DrawerItemModel(
+                  image: Assets.imagesLogout,
+                  text: 'Log Out',
+                ),
+              ),
+              SizedBox(height: 30),
+            ],
           ),
-        ),
-        const InActiveDrawerItemWidget(
-          drawerItemModel: DrawerItemModel(
-            image: Assets.imagesLogout,
-            text: 'Log Out',
-          ),
-        ),
-        const SizedBox(height: 30),
+        )
       ],
     );
   }
