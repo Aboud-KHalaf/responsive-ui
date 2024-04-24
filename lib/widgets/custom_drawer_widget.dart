@@ -5,19 +5,26 @@ import 'package:ui/utils/app_images.dart';
 import 'package:ui/widgets/custom_user_info_widget.dart';
 import 'package:ui/widgets/drawer_item_widget.dart';
 
-class CustomDrawerWidget extends StatelessWidget {
+class CustomDrawerWidget extends StatefulWidget {
   const CustomDrawerWidget({super.key});
 
-  static const List<DrawerItemModel> items = [
-    DrawerItemModel(image: Assets.imagesDashboard, text: 'My Dashbord'),
-    DrawerItemModel(image: Assets.imagesGallery, text: 'My Dashbord'),
-    DrawerItemModel(image: Assets.imagesIncome, text: 'My Dashbord'),
-    DrawerItemModel(image: Assets.imagesLogout, text: 'My Dashbord'),
-  ];
+  @override
+  State<CustomDrawerWidget> createState() => _CustomDrawerWidgetState();
+}
 
+class _CustomDrawerWidgetState extends State<CustomDrawerWidget> {
+  List<DrawerItemModel> items = [
+    const DrawerItemModel(image: Assets.imagesDashboard, text: 'My Dashbord'),
+    const DrawerItemModel(image: Assets.imagesGallery, text: 'My Dashbord'),
+    const DrawerItemModel(
+        image: Assets.imagesMyTransctions, text: 'My Dashbord'),
+    const DrawerItemModel(image: Assets.imagesLogout, text: 'My Dashbord'),
+  ];
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CustomUserInfoWidget(
           userInfo: UserInfo(
@@ -32,7 +39,17 @@ class CustomDrawerWidget extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           itemCount: items.length,
           itemBuilder: (context, index) {
-            return DrawerItemWidget(drawerItemModel: items[index]);
+            return GestureDetector(
+              onTap: () {
+                setState(() {
+                  selectedIndex = index;
+                });
+              },
+              child: DrawerItemWidget(
+                isSelected: (index == selectedIndex),
+                drawerItemModel: items[index],
+              ),
+            );
           },
         )
       ],

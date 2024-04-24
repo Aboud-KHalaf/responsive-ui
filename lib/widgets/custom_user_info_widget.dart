@@ -14,6 +14,7 @@ class CustomUserInfoWidget extends StatelessWidget {
       color: Colors.white10,
       elevation: 0,
       child: ListTile(
+        contentPadding: EdgeInsets.zero,
         leading: SvgPicture.asset(userInfo.image),
         title: Text(
           userInfo.name,

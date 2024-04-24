@@ -4,9 +4,14 @@ import 'package:ui/models/drawer_item_model.dart';
 import 'package:ui/utils/app_styles.dart';
 
 class DrawerItemWidget extends StatelessWidget {
-  const DrawerItemWidget({super.key, required this.drawerItemModel});
+  const DrawerItemWidget({
+    super.key,
+    required this.drawerItemModel,
+    required this.isSelected,
+  });
 
   final DrawerItemModel drawerItemModel;
+  final bool isSelected;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +21,9 @@ class DrawerItemWidget extends StatelessWidget {
       ),
       title: Text(
         drawerItemModel.text,
-        style: AppStyles.styleMedium16(context),
+        style: isSelected
+            ? AppStyles.styleBold16(context).copyWith(color: Colors.cyan)
+            : AppStyles.styleMedium16(context),
       ),
     );
   }
