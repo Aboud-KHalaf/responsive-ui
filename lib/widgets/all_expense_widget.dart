@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui/widgets/all_expense_header_widget.dart';
+import 'package:ui/widgets/all_expense_itmes.dart';
 
 class AllExpenseWidget extends StatelessWidget {
   const AllExpenseWidget({
@@ -17,6 +18,8 @@ class AllExpenseWidget extends StatelessWidget {
       child: const Column(
         children: [
           AllExpenseHeader(),
+          SizedBox(height: 10),
+          AllExpenseItemsWidget()
         ],
       ),
     );
