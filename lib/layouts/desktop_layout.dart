@@ -15,12 +15,12 @@ class DesktopLayout extends StatelessWidget {
           flex: 1,
           child: CustomDrawerWidget(),
         ),
-        SizedBox(width: 24),
+        SizedBox(width: 12),
         Expanded(
           flex: 2,
           child: AllExpenseWidget(),
         ),
-        SizedBox(width: 24),
+        SizedBox(width: 12),
         Expanded(
           flex: 2,
           child: SizedBox(),
