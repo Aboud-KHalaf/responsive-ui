@@ -35,13 +35,13 @@ class AllExpenseItemHeader extends StatelessWidget {
             ),
           ),
         ),
-        const RotatedBox(
+        RotatedBox(
           quarterTurns: 90,
           child: Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only(left: 8.0),
             child: Icon(
               Icons.arrow_back_ios,
-              color: Colors.black,
+              color: imageColor ?? Colors.black,
             ),
           ),
         )
