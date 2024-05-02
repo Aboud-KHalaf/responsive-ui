@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui/utils/app_styles.dart';
 import 'package:ui/widgets/latest_transaction_list_view.dart';
 
 class LatestTransactionSection extends StatelessWidget {
@@ -8,11 +9,15 @@ class LatestTransactionSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Latest Transactions'),
-        SizedBox(height: 7),
-        LatestTransactionsListViewWidget(),
+        Text(
+          'Latest Transactions',
+          style: AppStyles.styleSemiBold16(context),
+        ),
+        const SizedBox(height: 7),
+        const LatestTransactionsListViewWidget(),
       ],
     );
   }

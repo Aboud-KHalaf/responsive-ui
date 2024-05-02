@@ -21,6 +21,7 @@ class DesktopLayout extends StatelessWidget {
           flex: 2,
           child: Column(
             children: [
+              SizedBox(height: 40),
               AllExpenseWidget(),
               SizedBox(height: 12),
               QuickInvoicWidget(),
