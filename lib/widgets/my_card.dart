@@ -3,8 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:ui/utils/app_images.dart';
 import 'package:ui/utils/app_styles.dart';
 
-class MyCart extends StatelessWidget {
-  const MyCart({
+class MyCard extends StatelessWidget {
+  const MyCard({
     super.key,
   });
 
@@ -17,6 +17,7 @@ class MyCart extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
           color: Colors.cyan,
           image: const DecorationImage(
+            fit: BoxFit.fill,
             image: AssetImage(
               Assets.imagesCardBackground,
             ),

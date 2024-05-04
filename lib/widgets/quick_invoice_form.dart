@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:ui/widgets/custom_button.dart';
 import 'package:ui/widgets/title_text_field.dart';
 
@@ -12,21 +11,21 @@ class QuickInvoiceForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        // Row(
-        //   children: [
-        //     Expanded(child: TitleTextField(title: 'title', hint: 'hint')),
-        //     SizedBox(width: 8),
-        //     Expanded(child: TitleTextField(title: 'title', hint: 'hint')),
-        //   ],
-        // ),
-        // SizedBox(height: 12),
-        // Row(
-        //   children: [
-        //     Expanded(child: TitleTextField(title: 'title', hint: 'hint')),
-        //     SizedBox(width: 8),
-        //     Expanded(child: TitleTextField(title: 'title', hint: 'hint')),
-        //   ],
-        // ),
+        Row(
+          children: [
+            Expanded(child: TitleTextField(title: 'title', hint: 'hint')),
+            SizedBox(width: 8),
+            Expanded(child: TitleTextField(title: 'title', hint: 'hint')),
+          ],
+        ),
+        SizedBox(height: 12),
+        Row(
+          children: [
+            Expanded(child: TitleTextField(title: 'title', hint: 'hint')),
+            SizedBox(width: 8),
+            Expanded(child: TitleTextField(title: 'title', hint: 'hint')),
+          ],
+        ),
         SizedBox(height: 8),
         Row(
           children: [
