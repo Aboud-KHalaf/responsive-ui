@@ -13,7 +13,7 @@ class CardSection extends StatefulWidget {
 
 class _CardSectionState extends State<CardSection> {
   late PageController pageController;
-  int currentPageIndex = 1;
+  int currentPageIndex = 0;
 
   @override
   void initState() {
@@ -32,7 +32,6 @@ class _CardSectionState extends State<CardSection> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(height: 30),
         MyCardsPageView(
           controller: pageController,
         ),
