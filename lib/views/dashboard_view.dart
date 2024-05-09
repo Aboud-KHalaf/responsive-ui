@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ui/widgets/adaptive_layout_widget.dart';
 import 'package:ui/layouts/desktop_layout.dart';
-import 'package:ui/widgets/cards_section.dart';
 import 'package:ui/widgets/custom_drawer_widget.dart';
+import 'package:ui/widgets/income_section.dart';
 
 class DashboardView extends StatelessWidget {
   const DashboardView({super.key});
@@ -15,7 +15,7 @@ class DashboardView extends StatelessWidget {
         // temp
         moblieLayout: (context) => const Padding(
           padding: EdgeInsets.all(12.0),
-          child: CardSection(),
+          child: IncomeSection(),
         ),
         // temp
         tabletLayout: (context) => const SizedBox(),

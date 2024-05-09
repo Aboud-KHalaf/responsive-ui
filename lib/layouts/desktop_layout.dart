@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import 'package:ui/widgets/allexpense_and_quick_invoice_section.dart';
-import 'package:ui/widgets/cards_section.dart';
-import 'package:ui/widgets/custom_background_container.dart';
+
 import 'package:ui/widgets/custom_drawer_widget.dart';
-import 'package:ui/widgets/transaction_history_header.dart';
-import 'package:ui/widgets/transaction_history_listview.dart';
+import 'package:ui/widgets/income_section.dart';
+
+import '../widgets/card_and_transaction_history_section.dart';
 
 class DesktopLayout extends StatelessWidget {
   const DesktopLayout({super.key});
@@ -28,7 +28,15 @@ class DesktopLayout extends StatelessWidget {
         SizedBox(width: 12),
         Expanded(
           flex: 1,
-          child: CardAndTransactionHistorySection(),
+          child: Column(
+            children: [
+              Expanded(
+                child: CardAndTransactionHistorySection(),
+              ),
+              SizedBox(height: 12),
+              Expanded(child: IncomeSection()),
+            ],
+          ),
         ),
       ],
     );
