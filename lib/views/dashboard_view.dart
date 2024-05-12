@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui/layouts/tablet_layout.dart';
 import 'package:ui/widgets/adaptive_layout_widget.dart';
 import 'package:ui/layouts/desktop_layout.dart';
 import 'package:ui/widgets/custom_drawer_widget.dart';
@@ -12,14 +13,14 @@ class DashboardView extends StatelessWidget {
     return Scaffold(
       drawer: const CustomDrawerWidget(),
       body: AdaptiveLayoutWidget(
-        // temp
+        // moblie layout
         moblieLayout: (context) => const Padding(
           padding: EdgeInsets.all(12.0),
           child: IncomeSection(),
         ),
-        // temp
-        tabletLayout: (context) => const SizedBox(),
-        // work here
+        // tablet layout
+        tabletLayout: (context) => const TabletLayout(),
+        // desktop layout
         desktopLayout: (context) => const DesktopLayout(),
       ),
     );

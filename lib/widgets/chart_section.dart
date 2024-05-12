@@ -1,7 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:ui/models/item_details_model.dart';
-import 'package:ui/utils/app_styles.dart';
 import 'package:ui/widgets/income_item_details.dart';
 
 class ChartSection extends StatefulWidget {

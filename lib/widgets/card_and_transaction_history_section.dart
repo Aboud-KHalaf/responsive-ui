@@ -20,9 +20,7 @@ class CardAndTransactionHistorySection extends StatelessWidget {
             height: 20,
           ),
           TransactionHistoryHeader(),
-          Expanded(
-            child: TransactionsHistoryListView(),
-          ),
+          TransactionsHistoryListView(),
         ],
       ),
     );
