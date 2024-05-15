@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:ui/models/item_details_model.dart';
@@ -74,12 +76,20 @@ class IncomeItemsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      shrinkWrap: true,
-      itemCount: items.length,
-      itemBuilder: (context, index) {
-        return IncomeItemDetails(itemDetailsModel: items[index]);
-      },
+    return Column(
+      children: items.map(
+        (e) {
+          return IncomeItemDetails(itemDetailsModel: e);
+        },
+      ).toList(),
     );
+
+    // return ListView.builder(
+    //   shrinkWrap: true,
+    //   itemCount: items.length,
+    //   itemBuilder: (context, index) {
+    //     return IncomeItemDetails(itemDetailsModel: items[index]);
+    //   },
+    // );
   }
 }
