@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ui/layouts/mobile_layout.dart';
 import 'package:ui/widgets/custom_drawer_widget.dart';
-import 'package:ui/widgets/moblie_layout_body_widget.dart';
 
 class TabletLayout extends StatelessWidget {
   const TabletLayout({super.key});
@@ -15,9 +15,7 @@ class TabletLayout extends StatelessWidget {
         SizedBox(width: 12),
         Expanded(
           flex: 3,
-          child: SingleChildScrollView(
-            child: MoblieLayoutBodyWidget(),
-          ),
+          child: MoblieLayout(),
         ),
         SizedBox(width: 12),
       ],
